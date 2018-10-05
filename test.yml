@@ -1,0 +1,5 @@
+- hosts: db
+  tasks:
+  - service_facts:
+    register: result
+  - debug: var=result.ansible_facts.services['mariadb.service'].state
